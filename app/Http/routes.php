@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+ Route::get('/', array('as' => 'home', function()
+{
+    return View::make('welcome');
+}));
+
+Route::group(['prefix' => 'user'], function () {
+    Route::resource('news', 'NewsController');
 });

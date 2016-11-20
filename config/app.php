@@ -146,10 +146,7 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
-        //Third party
-        Barryvdh\Debugbar\ServiceProvider::class,
-
+        Illuminate\View\ViewServiceProvider::class,        
         /*
          * Application Service Providers...
          */
@@ -157,7 +154,13 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
+        //Third party
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Sentinel\SentinelServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        
     ],
 
     /*
@@ -205,6 +208,12 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         //Third party
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
+        'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
+        'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        //form
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
