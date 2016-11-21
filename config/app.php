@@ -160,6 +160,7 @@ return [
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Sentinel\SentinelServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Roumen\Feed\FeedServiceProvider::class,
         
     ],
 
@@ -211,9 +212,10 @@ return [
         'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        'Feed' => Roumen\Feed\Feed::class,
         //form
         'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,        
 
     ],
 

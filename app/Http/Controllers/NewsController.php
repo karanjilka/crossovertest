@@ -81,55 +81,12 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {                        
         $row = $this->model->find($id);        
         if(!$this->chkOwnId($row->user_id)){
             return redirect('user/news')->with('error', 'You can not access it.');
         }
         return view('users.news.edit', compact('row'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-            'title' => 'required|max:255',
-            'description' => 'required',
-            'photo' => 'mimes:jpeg,bmp,png',
-        ]);
-        $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'reporter_name' => $request->reporter_name,
-            'reporter_email' => $request->reporter_email,
-        ];
-        if ($request->hasFile('photo')) {
-            $filename = basename($request->file('photo')->getClientOriginalName() . uniqid('-fl-'), '.' . $request->file('photo')->getClientOriginalExtension());
-            $filename = $filename . $request->file('photo')->getClientOriginalExtension();
-            $request->file('photo')->move(public_path('uploads/news'), $filename);
-            $data['photo'] = $filename;
-        }
-        $this->model
-            ->where('id', $id)
-            ->update($data);
-        return redirect('user/news')->with('success', 'News modified scuccessfully.');
-    }
+    } 
 
     /**
      * Remove the specified resource from storage.

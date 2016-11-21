@@ -29,9 +29,8 @@
                 <tbody>
                 @foreach ($rows as $row)
                     <tr>
-                        <td width="80%"><a href="{{ url('user/news/'.$row->id.'/edit') }}">{{ $row->title }}</a></td>                        
-                        <td>                            
-                            <button class="btn btn-default" type="button" onClick="location.href='{{ url('user/news/'.$row->id.'/edit') }}'">Edit</button>
+                        <td width="80%">{{ $row->title }}</td>                        
+                        <td>                                                        
                             {!! Form::open(['url' => 'user/news/'.$row->id,'method'=>'DELETE','style'=>'display:inline']) !!}                                                                
                                 <button type="submit" class="btn btn-danger">
                                     Delete
