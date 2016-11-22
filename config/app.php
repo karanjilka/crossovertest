@@ -161,6 +161,7 @@ return [
         Sentinel\SentinelServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         
     ],
 
@@ -213,6 +214,7 @@ return [
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Feed' => Roumen\Feed\Feed::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
         //form
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,        

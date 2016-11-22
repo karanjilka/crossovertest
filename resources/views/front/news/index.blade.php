@@ -24,6 +24,8 @@ Users
         </a>
         @endforeach
     </div>
-
+    <div class="pull-right">
+        <a href="{{ url('news/feed') }}" target="_blank">RSS Feeds</a>
+    </div>
 </div>
 @stop

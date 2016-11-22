@@ -13,11 +13,10 @@
 Route::get('/',array('as' => 'home','uses' => 'FrontNewsController@index'));
 Route::get('news/show/{id}',['uses' => 'FrontNewsController@show']);
 Route::get('news/feed',['uses' => 'FrontNewsController@feed']);
+Route::get('news/pdf/{id}',['uses' => 'FrontNewsController@pdf']);
 
 Route::group(['prefix' => 'user'], function () {
     Route::resource('news', 'NewsController', ['only' => [
             'index', 'create', 'store', 'destroy'
     ]]);
 });
-
-

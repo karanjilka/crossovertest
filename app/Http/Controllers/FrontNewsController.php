@@ -39,6 +39,20 @@ class FrontNewsController extends Controller
         $row = $this->model->find($id);
         return view('front.news.show', compact('row'));
     }
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function pdf($id)
+    {
+        $row = $this->model->find($id);
+        $pdf = \PDF::loadView('front.news.pdf', compact('row'));
+        return $pdf->download('invoice.pdf');         
+        //return view('front.news.pdf', compact('row'));
+    }
 
     /**
      * Display a listing of the resource.

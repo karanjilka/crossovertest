@@ -31,6 +31,8 @@ Users
     <p>
         {{ $row->description }}
     </p>
-
+    <p class="pull-right">
+        <a href="{{ url('news/pdf/'.$row->id) }}">Download PDF</a>
+    </p>
 </div>
 @stop

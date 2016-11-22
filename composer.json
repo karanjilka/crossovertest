@@ -11,7 +11,8 @@
         "cartalyst/sentinel": "2.0.*",
         "rydurham/sentinel": "~2.3",
         "laravelcollective/html": "^5.2.0",
-        "roumen/feed": "^2.10"
+        "roumen/feed": "^2.10",
+        "barryvdh/laravel-dompdf": "^0.7.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
